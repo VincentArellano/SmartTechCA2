@@ -81,7 +81,7 @@ def send_control(steering_angle, throttle):
 
 if __name__ == '__main__':
     #app.run(port=3000)
-    model = load_model('pass bridge1.h5')
+    model = load_model('track1model.h5')
     #wrap the flask application with the socketio server
     app = socketio.Middleware(sio, app)
     #deploy the application on the eventlet web server
