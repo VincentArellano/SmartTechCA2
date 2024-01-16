@@ -32,7 +32,7 @@ sio = socketio.Server()
 app = Flask(__name__) #'__main__'
 
 #speed limit for the car
-speed_limit = 20
+speed_limit = 30
 
 @sio.on('connect') # decorator
 #connect is the event name
@@ -81,7 +81,7 @@ def send_control(steering_angle, throttle):
 
 if __name__ == '__main__':
     #app.run(port=3000)
-    model = load_model('track1model.h5')
+    model = load_model('model.h5')
     #wrap the flask application with the socketio server
     app = socketio.Middleware(sio, app)
     #deploy the application on the eventlet web server
